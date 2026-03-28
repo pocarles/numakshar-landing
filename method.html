@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Method — NumAkshar</title>
+  <meta name="description" content="How NumAkshar's method was born — a Swiss numerology tradition refined over 30 years, now designed for Indian professionals." />
+  <meta name="theme-color" content="#1A2820" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #FAF7F2;
+      --bg-warm: #F4EFE6;
+      --deep: #1A2820;
+      --deep-soft: #243830;
+      --text: #1A1D1B;
+      --text-light: #F0EBE3;
+      --text-mid: #5A5550;
+      --text-faint: rgba(240,235,227,0.55);
+      --copper: #B87333;
+      --copper-light: #D49B60;
+      --copper-dark: #8C5A28;
+      --copper-glow: rgba(184,115,51,0.10);
+      --card-border: rgba(184,115,51,0.12);
+      --serif: 'DM Serif Display', Georgia, serif;
+      --sans: 'Inter', system-ui, -apple-system, sans-serif;
+      --w: min(780px, 92%);
+      --r: 14px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    body {
+      font-family: var(--sans); color: var(--text); background: var(--bg);
+      line-height: 1.75; font-size: 16px; overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    .w { width: var(--w); margin: 0 auto; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100; padding: 0.85rem 0;
+      background: rgba(250,247,242,0.88); backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .nav-links { display: flex; align-items: center; gap: 1.5rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.85rem; color: var(--text-mid); font-weight: 500;
+      transition: color 180ms;
+    }
+    .nav-links a:hover { color: var(--copper); }
+    .logo { font-family: var(--serif); font-size: 1.35rem; color: var(--text); }
+    .logo b { color: var(--copper); font-weight: inherit; }
+    .nav-btn {
+      padding: 0.5rem 1rem; border-radius: 999px;
+      border: 1px solid var(--card-border); background: transparent;
+      color: var(--copper); font-size: 0.82rem; font-weight: 600;
+      transition: all 180ms; white-space: nowrap;
+    }
+    .nav-btn:hover { background: var(--copper); color: #fff; border-color: var(--copper); }
+
+    .page-hero {
+      padding: 5rem 0 4rem; background: var(--deep); color: var(--text-light);
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.68rem; font-weight: 600;
+      letter-spacing: 0.13em; text-transform: uppercase;
+      color: var(--copper); margin-bottom: 0.7rem;
+    }
+    .eyebrow::before { content: ''; width: 20px; height: 1px; background: var(--copper); }
+    .page-hero h1 {
+      font-family: var(--serif); font-weight: 400;
+      font-size: clamp(2rem, 5vw, 3rem); line-height: 1.15;
+      letter-spacing: -0.01em; margin-bottom: 0.8rem;
+    }
+    .page-hero h1 i { color: var(--copper); font-style: italic; }
+    .page-hero .lead {
+      max-width: 38rem; font-size: 1.05rem; color: var(--text-faint); line-height: 1.75;
+    }
+
+    .sec { padding: 3.5rem 0; }
+    .sec + .sec { border-top: 1px solid rgba(0,0,0,0.04); }
+    .sec-dark { background: var(--deep); color: var(--text-light); border-top: none !important; }
+    .sec h2 {
+      font-family: var(--serif); font-weight: 400;
+      font-size: clamp(1.6rem, 4vw, 2.2rem); line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .sec p { font-size: 1rem; color: var(--text-mid); line-height: 1.75; margin-bottom: 1rem; }
+    .sec p:last-child { margin-bottom: 0; }
+    .sec-dark p { color: rgba(240,235,227,0.7); }
+    .divider { width: 40px; height: 1px; background: var(--copper); opacity: 0.4; margin: 1.5rem 0; }
+
+    .quote-block {
+      margin: 2rem 0; padding: 1.5rem 1.8rem;
+      border-left: 3px solid var(--copper);
+      background: var(--bg-warm); border-radius: 0 var(--r) var(--r) 0;
+    }
+    .sec-dark .quote-block {
+      background: rgba(255,255,255,0.04);
+      border-left-color: var(--copper-light);
+    }
+    .quote-block blockquote {
+      font-family: var(--serif); font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+      line-height: 1.6; font-style: italic; color: var(--text);
+    }
+    .sec-dark .quote-block blockquote { color: var(--text-light); }
+    .quote-block cite {
+      display: block; margin-top: 0.8rem; font-style: normal;
+      font-size: 0.88rem; color: var(--copper); font-weight: 600;
+    }
+    .quote-block cite a { color: var(--copper); border-bottom: 1px solid rgba(184,115,51,0.3); }
+    .quote-block cite a:hover { border-bottom-color: var(--copper); }
+
+    .stats-grid {
+      display: grid; gap: 1rem; margin: 2rem 0;
+    }
+    .stat-card {
+      padding: 1.3rem 1.5rem; border-radius: var(--r);
+      background: rgba(26,40,32,0.03); border: 1px solid rgba(0,0,0,0.04);
+    }
+    .stat-card .num {
+      font-family: var(--serif); font-size: 2rem; color: var(--copper); line-height: 1;
+    }
+    .stat-card .label {
+      font-size: 0.9rem; color: var(--text-mid); margin-top: 0.3rem; line-height: 1.5;
+    }
+
+    .principle {
+      padding: 1.2rem 0; border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .principle:last-child { border-bottom: none; }
+    .principle h3 {
+      font-family: var(--serif); font-size: 1.15rem; margin-bottom: 0.3rem;
+    }
+    .principle p { font-size: 0.92rem; margin-bottom: 0; }
+
+    .compare-card {
+      padding: 1.3rem 1.5rem; border-radius: var(--r);
+      background: rgba(26,40,32,0.03); border: 1px solid rgba(0,0,0,0.04);
+    }
+    .compare-card.highlight {
+      background: var(--copper-glow); border-color: var(--copper);
+    }
+    .compare-card h3 {
+      font-size: 0.78rem; font-family: var(--sans); font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      margin-bottom: 0.6rem; color: var(--text-mid);
+    }
+    .compare-card.highlight h3 { color: var(--copper); }
+    .compare-card p { font-size: 0.92rem; margin-bottom: 0; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 0.8rem 1.6rem; border: none; border-radius: 999px;
+      font-weight: 600; font-size: 0.92rem; transition: all 200ms; cursor: pointer;
+    }
+    .btn-fill {
+      background: var(--copper); color: #fff;
+      box-shadow: 0 4px 16px rgba(184,115,51,0.22);
+    }
+    .btn-fill:hover { background: var(--copper-dark); transform: translateY(-1px); }
+
+    footer {
+      padding: 2rem 0 1.5rem; text-align: center;
+      font-size: 0.82rem; color: var(--text-mid);
+      border-top: 1px solid rgba(0,0,0,0.05);
+    }
+    .footer-links {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .footer-links a {
+      font-size: 0.85rem; color: var(--text-mid); font-weight: 500;
+      transition: color 180ms;
+    }
+    .footer-links a:hover { color: var(--copper); }
+    .footer-copy { font-size: 0.78rem; color: rgba(0,0,0,0.3); }
+
+    /* ORIGIN LAYOUT */
+    .origin-layout { display: grid; gap: 2rem; }
+    .evan-card {
+      border-radius: var(--r); overflow: hidden;
+    }
+    .evan-card-inner {
+      background: var(--deep); padding: 1.8rem; border-radius: var(--r);
+    }
+
+    @media (min-width: 700px) {
+      .origin-layout { grid-template-columns: 1.1fr 0.9fr; gap: 2.5rem; align-items: start; }
+    }
+    @media (min-width: 600px) {
+      .stats-grid { grid-template-columns: repeat(3, 1fr); }
+      .compare-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 520px) {
+      .page-hero h1 { font-size: 1.75rem; }
+      .nav-btn { font-size: 0.72rem; padding: 0.35rem 0.7rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav><div class="w nav-inner">
+    <a class="logo" href="/">Num<b>Akshar</b></a>
+    <div class="nav-links">
+      <a href="/#calculator">Free reading</a>
+      <a href="/#about">Our approach</a>
+      <a href="/#reading">The theme</a>
+      <a href="/method.html">The method</a>
+    </div>
+    <a class="nav-btn" href="/#waitlist">Join waitlist →</a>
+  </div></nav>
+
+  <!-- ═══ PAGE HERO ═══ -->
+  <section class="page-hero"><div class="w">
+    <div class="eyebrow">The method</div>
+    <h1>Swiss precision, <i>Indian depth.</i></h1>
+    <p class="lead">NumAkshar didn't invent numerology. We built a bridge between a Swiss tradition refined over three decades and the Indian professional's instinct that numbers carry meaning. This is the story of how the method came together.</p>
+  </div></section>
+
+  <!-- ═══ 1. THE ORIGIN ═══ -->
+  <section class="sec" style="background:var(--bg-warm)"><div class="w">
+    <div class="origin-layout">
+      <div>
+        <div class="eyebrow">The origin</div>
+        <h2>It started in Switzerland.</h2>
+        <p>For over 30 years, a practice in Switzerland has been studying the patterns hidden in birth dates and names. Not to predict the future, but to help people understand what is already happening in their lives.</p>
+        <p>Thousands of personal readings. Thousands of hours refining a methodology that balances rigour with sensitivity. A tradition built on a simple conviction: when a reading is accurate, it doesn't frighten you. It calms you. It doesn't push you toward action. It gives you space to think.</p>
+      </div>
+      <div class="evan-card">
+        <div class="evan-card-inner">
+          <div style="font-size:0.68rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--copper);margin-bottom:0.8rem">The practitioner</div>
+          <h3 style="font-family:var(--serif);font-size:1.4rem;color:var(--text-light);margin-bottom:0.5rem">Evan Verdier</h3>
+          <p style="font-size:0.92rem;color:rgba(240,235,227,0.65);line-height:1.6;margin-bottom:0.8rem">A world-class numerologist based in Switzerland. Author of <em>Les Nombres Angéliques de l'Âge du Verseau</em>. Three decades of practice, thousands of readings, clients across the globe.</p>
+          <p style="font-size:0.92rem;color:rgba(240,235,227,0.65);line-height:1.6;margin-bottom:1rem">His approach is concrete, honest, and free of the theatrical. He treats every reading as a conversation between the numbers and the person, not a verdict.</p>
+          <a href="https://www.numerologie.ch" target="_blank" rel="noopener" style="font-size:0.85rem;color:var(--copper-light);font-weight:600;border-bottom:1px solid rgba(212,155,96,0.3);padding-bottom:2px">numerologie.ch →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-block" style="margin-top:2.5rem">
+      <blockquote>"Numbers don't predict anything. They illuminate your path. When a reading is right, it doesn't take you away from yourself. It brings you closer to your own rhythm."</blockquote>
+      <cite>Evan Verdier</cite>
+    </div>
+  </div></section>
+
+  <!-- ═══ 2. THE COLLABORATION ═══ -->
+  <section class="sec"><div class="w">
+    <h2>The collaboration.</h2>
+    <p>NumAkshar was born from a question: <em>what happens when you take a methodology built for depth, and shape it for a culture that has always understood that numbers carry weight?</em></p>
+    <p>India doesn't need to be taught that numbers matter. From muhurat timing and naming ceremonies to business name selection and compatibility checks, the Indian relationship with numbers is ancient, intuitive, and deeply practical.</p>
+    <p>But the Indian numerology market today is largely built around quick consultations: a phone call, a lucky number, a spelling change. Valuable, but often surface-level. The reading ends when the call does.</p>
+    <p>NumAkshar's method takes a different approach. Working with Evan Verdier's three decades of Swiss practice, we co-developed a structured reading format: a written portrait that covers 33 sections, from core personality and career alignment to timing cycles and name vibration analysis.</p>
+    <p>The goal is simple. A single document that gives you everything. No follow-up needed to understand it. No dependency on a practitioner's availability. A reading you can return to at every crossroads.</p>
+  </div></section>
+
+  <!-- ═══ 3. TWO TRADITIONS ═══ -->
+  <section class="sec sec-dark"><div class="w">
+    <h2>Why two traditions are stronger than one.</h2>
+    <p>Most Indian numerologists work with the Chaldean or Pythagorean systems, both of which originated outside India. Numerology has always been a practice that travels across borders and absorbs the intelligence of each culture it touches.</p>
+    <p>NumAkshar embraces this. The Swiss tradition brings a specific kind of rigour: structured analysis, written clarity, and a refusal to deal in fear or vague promises. The Indian context brings something the Swiss tradition alone cannot provide: a culture where numbers are already woven into daily decisions, from choosing a wedding date to naming a child to launching a company.</p>
+    <p style="color:var(--copper-light)">When you combine Swiss structure with Indian intuition, you get a reading that is both deeper and more practical than either tradition could produce alone.</p>
+
+    <div class="divider" style="background:var(--copper-light)"></div>
+
+    <div style="margin-top:1.5rem">
+      <div class="principle">
+        <h3 style="color:var(--text-light)">Swiss contribution</h3>
+        <p>Structured 33-section format. Written portrait designed for clarity. 30 years of refined methodology. Sensitivity without theatrics.</p>
+      </div>
+      <div class="principle" style="border-color:rgba(255,255,255,0.06)">
+        <h3 style="color:var(--text-light)">Indian contribution</h3>
+        <p>Cultural fluency with numbers. Career, naming, and compatibility context. An audience that already understands what a reading can do, and expects depth.</p>
+      </div>
+      <div class="principle" style="border-color:rgba(255,255,255,0.06)">
+        <h3 style="color:var(--copper-light)">The NumAkshar result</h3>
+        <p style="color:rgba(240,235,227,0.85)">The most complete numerological theme available in India. Written, personal, structured, and designed for people who have outgrown quick answers.</p>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- ═══ 4. TRY THE DIFFERENCE ═══ -->
+  <section class="sec"><div class="w">
+    <h2>Already tried numerology? Try the difference.</h2>
+    <p>If you have consulted a numerologist before, you know the format: a phone call, a list of lucky numbers, maybe a name spelling correction. You walked away with a few answers, but probably not with a document you could revisit six months later and still find useful.</p>
+    <p>That's not a criticism of the practice. It's a limitation of the format. A 20-minute consultation can only go so deep. NumAkshar was built for the person who wants to go further.</p>
+
+    <div class="compare-grid" style="display:grid;gap:1rem;margin-top:2rem">
+      <div class="compare-card">
+        <h3>What you may have received</h3>
+        <p>A quick consultation. Lucky numbers, a name spelling, maybe a gemstone recommendation. Broad strokes, few explanations, and little you can act on without another appointment.</p>
+      </div>
+      <div class="compare-card highlight">
+        <h3>What NumAkshar delivers</h3>
+        <p>A 33-section written portrait. Personality, career alignment, relationship dynamics, personal year cycles, blind spots, and name analysis. Structured, specific, and yours to keep. No follow-up needed to understand it. No fear, no drama, no dependency.</p>
+      </div>
+    </div>
+
+    <p style="margin-top:1.5rem">Both approaches have value. But if you have ever felt that a consultation gave you fragments when you wanted the full picture, NumAkshar was designed for exactly that gap.</p>
+  </div></section>
+
+  <!-- ═══ 5. WHY PEOPLE TRUST IT ═══ -->
+  <section class="sec" style="background:var(--bg-warm)"><div class="w">
+    <h2>Why millions of people trust numerology with their biggest decisions.</h2>
+    <p>You are not alone in turning to numbers for clarity. Across the world and especially in India, numerology has become one of the most trusted tools for navigating career moves, relationships, and life transitions.</p>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="num">30M+</div>
+        <div class="label">Indians have downloaded AstroTalk alone. Career guidance, compatibility, and naming are the top reasons people consult.</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">49%</div>
+        <div class="label">Annual growth rate of the Indian digital astrology and numerology market. The demand is accelerating, not slowing.</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">$1.8B</div>
+        <div class="label">Projected value of India's digital astrology market by 2030, up from $163M in 2024. Professionals are leading this growth.</div>
+      </div>
+    </div>
+
+    <p>What these numbers tell you is simple: the smartest, most successful people around you are already using numerology to inform their decisions. They are choosing business names, timing career moves, and evaluating relationships with the help of their numbers.</p>
+    <p>The question is not whether numerology works. Millions have already answered that. The question is whether you have access to the right depth of reading. Most digital platforms offer a paragraph and a lucky number. NumAkshar delivers a 33-section portrait built on a methodology refined over three decades.</p>
+  </div></section>
+
+  <!-- ═══ 6. PRINCIPLES ═══ -->
+  <section class="sec"><div class="w">
+    <h2>What we believe.</h2>
+    <p style="margin-bottom:1.5rem">These principles shape every reading NumAkshar produces. They come directly from Evan Verdier's practice, and they are non-negotiable.</p>
+
+    <div class="principle">
+      <h3>Numbers illuminate. They don't predict.</h3>
+      <p>A reading helps you see patterns, tendencies, and rhythms. It never claims to know your future. Your free will stays entirely yours.</p>
+    </div>
+    <div class="principle">
+      <h3>No fear, no drama, no dependency.</h3>
+      <p>We name strengths without flattery, tensions without brutality, and blind spots without judgement. A good reading calms. It doesn't alarm.</p>
+    </div>
+    <div class="principle">
+      <h3>One reading should be enough.</h3>
+      <p>You shouldn't need a follow-up call to understand your own portrait. It's written for clarity, designed for re-reading, and structured so every section stands on its own.</p>
+    </div>
+    <div class="principle">
+      <h3>Respect the person, not just the numbers.</h3>
+      <p>Behind every date of birth is a human being making real decisions. The reading speaks to you as a whole person, not as a case study.</p>
+    </div>
+    <div class="principle">
+      <h3>Accessible to everyone.</h3>
+      <p>You don't need to know the codes, the schools, or the symbols. If it's your first encounter with numerology, the reading will still make sense.</p>
+    </div>
+  </div></section>
+
+  <!-- ═══ 7. CTA ═══ -->
+  <section class="sec sec-dark"><div class="w" style="text-align:center">
+    <h2>Ready to see what your numbers carry?</h2>
+    <p style="max-width:28rem;margin:0 auto 1.5rem;color:var(--text-faint)">Start with your free Life Path Number, or join the waitlist for your complete 33-section portrait.</p>
+    <div style="display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-fill" href="/#calculator">Discover my number, free</a>
+      <a class="btn" href="/#waitlist" style="border:1px solid rgba(255,255,255,0.15);color:var(--text-light)">Join the waitlist</a>
+    </div>
+  </div></section>
+
+  <footer><div class="w">
+    <div class="footer-links">
+      <a href="/">Home</a>
+      <a href="/#calculator">Free reading</a>
+      <a href="/#about">Our approach</a>
+      <a href="/#reading">The theme</a>
+      <a href="/method.html">The method</a>
+      <a href="/#waitlist">Waitlist</a>
+    </div>
+    <p class="footer-copy">NumAkshar © 2026 · A product by Istarian</p>
+  </div></footer>
+
+</body>
+</html>

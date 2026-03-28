@@ -1,11 +1,11 @@
 {
   "name": "numakshar-landing",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "dev": "vercel dev"
   },
   "dependencies": {
-    "resend": "^3.0.0"
+    "postmark": "^4.0.0"
   }
 }
